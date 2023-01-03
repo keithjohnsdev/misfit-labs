@@ -67,22 +67,20 @@
     &.last {
       margin-bottom: 30px;
     }
-  }
-
-  .img-div img {
-    height: 260px;
-  }
-}
-
-.serpentine .serpentine-row .text {
-  padding: 0;
-  & h3 {
-    font-size: 40px;
-    line-height: 44px;
-  }
-  & p {
-    font-size: 22px;
-    line-height: 33px;
+    & .text {
+      padding: 0;
+      & h3 {
+        font-size: 40px;
+        line-height: 44px;
+      }
+      & p {
+        font-size: 22px;
+        line-height: 33px;
+      }
+    }
+    & .img-div img {
+      height: 260px;
+    }
   }
 }
 
@@ -101,17 +99,17 @@
   .img-div img {
     height: 220px;
   }
-}
 
-.serpentine .serpentine-row .text {
-  padding: 0;
-  & h3 {
-    font-size: 30px;
-    line-height: 33px;
-  }
-  & p {
-    font-size: 18px;
-    line-height: 27px;
-    margin-top: 20px;
+  .serpentine .serpentine-row .text {
+    padding: 0;
+    & h3 {
+      font-size: 30px;
+      line-height: 33px;
+    }
+    & p {
+      font-size: 18px;
+      line-height: 27px;
+      margin-top: 20px;
+    }
   }
 }

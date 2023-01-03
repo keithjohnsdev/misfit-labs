@@ -224,7 +224,7 @@ const Home = () => {
                 deliver exponential returns.
               </p>
               <p className="platform-footer three">
-                TAILORED VC FUNDS<span className="opacity05">•</span>
+                TAILORED VC FUNDS {` `}<span className="opacity05">•</span>
                 <p> VENTURE DEVELOPMENT</p>
               </p>
             </div>
