@@ -1,0 +1,193 @@
+.platform {
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    black 72%,
+    white 72%,
+    white 100%
+  );
+  height: 750px;
+  color: white;
+}
+
+.platform-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.platform-box {
+  background-color: #1c1c1c;
+  height: 480px;
+  width: 400px;
+  position: relative;
+  padding-bottom: 60px;
+  padding-left: 40px;
+
+  & .logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 40px;
+    margin-right: 40px;
+  }
+
+  & img {
+    width: 90px;
+    height: 90px;
+  }
+
+  & .platform-title {
+    font-size: 40px;
+    font-weight: 400;
+
+    & .accent-text {
+      font-weight: 800;
+    }
+  }
+
+  & .platform-desc {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 33px;
+    margin-top: 20px;
+    opacity: 0.7;
+    padding-right: 25px;
+    font-family: "Vollkorn", serif;
+  }
+
+  & .platform-footer {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    position: absolute;
+    top: 390px;
+  }
+}
+
+.opacity05 {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 1440px) {
+  .platform {
+    height: 1100px;
+    background: linear-gradient(
+      to bottom,
+      black 0%,
+      black 91%,
+      white 91%,
+      white 100%
+    );
+
+    & .platform-boxes {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    & .platform-box {
+      width: 100%;
+      height: 280px;
+      margin-bottom: 20px;
+    }
+    & .logo-wrapper {
+      position: absolute;
+      top: 0px;
+      right: 20px;
+    }
+    & .platform-title {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+
+      & .accent-text {
+        margin-left: 0.25em;
+      }
+    }
+    & .platform-desc {
+      margin-top: 30px;
+      width: 70%;
+      &.one {
+        width: 50%;
+      }
+      &.three {
+        width: 75%;
+      }
+    }
+    & .platform-footer {
+      top: auto;
+      bottom: 36px;
+
+      &.three {
+        display: flex;
+
+        & .opacity05 {
+          margin: 0 0.25em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .platform {
+    height: 910px;
+    background: linear-gradient(
+      to bottom,
+      black 0%,
+      black 91%,
+      white 91%,
+      white 100%
+    );
+    & .platform-boxes {
+      padding-top: 15px;
+    }
+    & .platform-box {
+      height: 220px;
+      & .logo-wrapper {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        & img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      & .platform-title {
+        font-size: 30px;
+        line-height: 36px;
+
+        & .accent-text {
+          margin-left: 0.25em;
+        }
+      }
+      & .platform-desc {
+        width: 70%;
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 27px;
+        &.one {
+          width: 50%;
+        }
+        &.three {
+          width: 75%;
+        }
+      }
+      & .platform-footer {
+        bottom: 26px;
+        font-size: 16px;
+        line-height: 24px;
+
+        &.three {
+          display: flex;
+
+          & .opacity05 {
+            margin: 0 0.25em;
+          }
+        }
+      }
+    }
+  }
+}

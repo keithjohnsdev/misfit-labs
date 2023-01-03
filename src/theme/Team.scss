@@ -1,0 +1,137 @@
+.team {
+  background-color: black;
+}
+
+.gray-opaque {
+  color: #808080;
+}
+
+.white {
+  color: white;
+}
+
+.team-grid {
+  margin-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+
+  & .team-img {
+    width: 25%;
+    position: relative;
+    cursor: pointer;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .team-img-hover {
+      position: absolute;
+      color: white;
+      text-align: center;
+      z-index: 5;
+      top: 0px;
+      padding: 19% 50px 17%;
+      background-color: #64c680d8;
+      display: none;
+      height: 100%;
+      cursor: pointer;
+
+      & h3 {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 39px;
+      }
+
+      & p {
+        margin-top: 1.3em;
+        font-family: "Vollkorn", serif;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 29px;
+      }
+
+      & .svg-wrapper {
+        margin-top: auto;
+
+        & svg path {
+          fill: white;
+        }
+      }
+    }
+    &:hover {
+      .team-img-hover {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &.join-gang {
+      background-color: hsla(0, 0%, 100%, 0.1);
+
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.4);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 2100px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 19% 50px 15%;
+  }
+}
+
+@media only screen and (max-width: 1880px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 19% 50px 8%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 19.7% 8.8% 10%;
+
+    & h3 {
+      font-size: 24px;
+      line-height: 31px;
+    }
+    & p {
+      font-size: 22px;
+      line-height: 28.6px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1275px) {
+  .team-grid .team-img .team-img-hover {
+    text-align: center;
+    & h3 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    & p {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    & svg {
+      width: 45px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .team-grid .team-img .team-img-hover {
+    & h3 {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    & p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    & svg {
+      width: 36px;
+    }
+  }
+}
