@@ -24,6 +24,9 @@
 
     & .img-div {
       width: 50%;
+      & img {
+        height: 320px;
+      }
 
       &.mobile {
         display: none;
