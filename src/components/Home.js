@@ -95,7 +95,12 @@ const Home = () => {
           >
             Team
           </p>
-          <p className="nav email">hello@misfitlabs.vc</p>
+          <a
+            className="nav email"
+            href={"mailto:hello@misfitlabs.vc?subject=Hello%21"}
+          >
+            hello@misfitlabs.vc
+          </a>
           <div className="hamburger" onClick={hamburgerToggle}>
             <svg
               width="36"
@@ -155,14 +160,15 @@ const Home = () => {
         <Container>
           <h1 className="header fade-in">
             Here’s to the Misfits,{` `}
-            <br className="break"/>
+            <br className="break" />
             the troublemakers…
           </h1>
-          <p className="hero-desc slide-up" style={{ margin: "100px 0 308px" }}>
+          <p className="hero-desc slide-up">
             <span className="first-line">
               Misfit Labs is a technology venture studio H.Q. in Miami, FL.
             </span>
-            <br /> We develop, manage and scale products in partnership with <br className="break" />
+            <br /> We develop, manage and scale products in partnership with{" "}
+            <br className="break" />
             entrepreneurs, investors and innovative corporations.
           </p>
         </Container>
@@ -182,7 +188,7 @@ const Home = () => {
                 </p>
               </p>
               <p className="platform-desc one">
-                We take products from concept to scalable companies.
+                We take products from concept to <br /> scalable companies.
               </p>
               <p className="platform-footer">
                 DESIGN <span className="opacity05">•</span> INVEST{" "}
@@ -206,11 +212,12 @@ const Home = () => {
               <p className="platform-footer">
                 RESEARCH <span className="opacity05">•</span> STRATEGY{" "}
                 <span className="opacity05">•</span> DESIGN{" "}
-                <span className="opacity05">•</span> BUILD{" "}
-                <span className="opacity05">•</span> COMMERCIALIZATION
+                <span className="opacity05">•</span>
+                <br /> BUILD <span className="opacity05">•</span>{" "}
+                COMMERCIALIZATION
               </p>
             </div>
-            <div className="platform-box">
+            <div className="platform-box last">
               <div className="logo-wrapper">
                 <img src={require("../theme/assets/investors.png")} />
               </div>
@@ -224,7 +231,8 @@ const Home = () => {
                 deliver exponential returns.
               </p>
               <p className="platform-footer three">
-                TAILORED VC FUNDS {` `}<span className="opacity05">•</span>
+                TAILORED VC FUNDS {` `}
+                <span className="opacity05">•</span>
                 <p> VENTURE DEVELOPMENT</p>
               </p>
             </div>
@@ -249,9 +257,6 @@ const Home = () => {
                   Validating concepts, building business models, design thinking
                   and technology architecture.
                 </p>
-              </div>
-              <div className="img-div mobile">
-                <img src={require("../theme/assets/ideation.png")} />
               </div>
             </div>
             <div className="serpentine-row">
@@ -280,9 +285,6 @@ const Home = () => {
                   building products from concept to unicorn.
                 </p>
               </div>
-              <div className="img-div mobile">
-                <img src={require("../theme/assets/investing.png")} />
-              </div>
             </div>
             <div className="serpentine-row last">
               <div className="img-div mobile">
@@ -302,7 +304,7 @@ const Home = () => {
           </div>
         </Container>
       </section>
-      <section className="ingredients" ref={ingredients}>
+      <section className="ingredients desktop" ref={ingredients}>
         <Container>
           <p className="section-title gray slide-in">OUR INGREDIENTS</p>
           <h1 className="header fade-in">
@@ -322,13 +324,47 @@ const Home = () => {
             </div>
             <div className="ingredient-box">
               <img src={require("../theme/assets/vested-interest.png")} />
-              <h3>Vested Interest</h3>
+              <h3>
+                Vested
+                <br /> Interest
+              </h3>
               <p>Skin in the game with C-suite level roles.</p>
             </div>
           </div>
-          {/* <div className="recipe mobile">
-
-          </div> */}
+          <div className="recipe mobile">
+            <div className="serpentine">
+              <div className="serpentine-row">
+                <div className="img-div">
+                  <img src={require("../theme/assets/tech.png")} />
+                </div>
+                <div className="text">
+                  <h3>Guaranteed Tech</h3>
+                  <p>50 years of industry experience. No more do-overs.</p>
+                </div>
+              </div>
+              <div className="serpentine-row">
+                <div className="img-div mobile">
+                  <img src={require("../theme/assets/teams.png")} />
+                </div>
+                <div className="text">
+                  <h3>Dedicated Teams</h3>
+                  <p>For operations support and growth.</p>
+                </div>
+                <div className="img-div right">
+                  <img src={require("../theme/assets/teams.png")} />
+                </div>
+              </div>
+              <div className="serpentine-row">
+                <div className="img-div">
+                  <img src={require("../theme/assets/vested-interest.png")} />
+                </div>
+                <div className="text">
+                  <h3>Vested Interest</h3>
+                  <p>Skin in the game with C-suite level roles.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
       <section className="expertise" ref={expertise}>
@@ -338,7 +374,7 @@ const Home = () => {
             An extension of
             <br /> your team
           </h1>
-          <div className="categories">
+          <div className="categories large">
             <div className="cat one left">
               <img src={require("../theme/assets/bg-1.png")} />
               <p>Ideation</p>
@@ -388,6 +424,48 @@ const Home = () => {
               <p>Corporate Dev</p>
             </div>
           </div>
+          <div className="categories small">
+            <div className="cat one left">
+              <img src={require("../theme/assets/bg-1.png")} />
+              <p>Ideation</p>
+            </div>
+            <div className="cat two dark">
+              <img src={require("../theme/assets/bg-2.png")} />
+              <p>Strategy</p>
+            </div>
+            <div className="cat four dark">
+              <img src={require("../theme/assets/bg-4.png")} />
+              <p>Design</p>
+            </div>
+            <div className="cat three">
+              <img src={require("../theme/assets/bg-3.png")} />
+              <p>Branding</p>
+            </div>
+            <div className="cat five dark desktop">
+              <img src={require("../theme/assets/bg-5.png")} />
+              <p>Development</p>
+            </div>
+            <div className="cat six desktop">
+              <img src={require("../theme/assets/bg-6.png")} />
+              <p>Venture Capital</p>
+            </div>
+            <div className="cat six mobile">
+              <img src={require("../theme/assets/bg-6.png")} />
+              <p>Venture Capital</p>
+            </div>
+            <div className="cat five dark mobile">
+              <img src={require("../theme/assets/bg-5.png")} />
+              <p>Development</p>
+            </div>
+            <div className="cat seven dark">
+              <img src={require("../theme/assets/bg-7.png")} />
+              <p>Corporate Dev</p>
+            </div>
+            <div className="cat eight">
+              <img src={require("../theme/assets/bg-8.png")} />
+              <p>Operations</p>
+            </div>
+          </div>
         </Container>
       </section>
       <section className="team" ref={team}>
@@ -398,7 +476,7 @@ const Home = () => {
         <div className="team-grid">
           <div className="team-img">
             <img src={require("../theme/assets/joey.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/joey-gutierrez-7b281225/", "_blank")}>
               <h3>JOEY GUTIERREZ</h3>
               <p>
                 Entrepreneur, corporate development executive leading day-to-day
@@ -424,7 +502,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/kyle.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kylecarriedo/", "_blank")}>
               <h3>KYLE CARRIEDO</h3>
               <p>
                 Technology leader, senior R&D at Apple (iTunes, Apple Watch,
@@ -450,7 +528,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/scott.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/scottwjohns/", "_blank")}>
               <h3>SCOTT JOHNS</h3>
               <p>
                 Viking warrior and UI/UX designer that has worked with with
@@ -476,7 +554,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ant.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/anthony-alviz-a4048362/", "_blank")}>
               <h3>ANTHONY ALVIZ</h3>
               <p>
                 Lead front-end engineer, manager and black belt jiu jitsu
@@ -502,7 +580,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ken.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kencheung/", "_blank")}>
               <h3>KEN CHEUNG</h3>
               <p>
                 Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
@@ -528,7 +606,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ben.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/bsharpe/", "_blank")}>
               <h3>BEN SHARPE</h3>
               <p>
                 Head wizard, Apple & Microsoft Fellow with over 5 technology
@@ -554,7 +632,7 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/mark.png")} />
-            <div className="team-img-hover">
+            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/markosenga/", "_blank")}>
               <h3>MARK OSENGA</h3>
               <p>
                 Executive managing portfolio operations, training and
@@ -579,7 +657,9 @@ const Home = () => {
             </div>
           </div>
           <div className="team-img join-gang">
-            <img src={require("../theme/assets/join-the-gang.png")} />
+            <a href={"mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"}>
+              <img src={require("../theme/assets/join-the-gang.png")} />
+            </a>
           </div>
         </div>
       </section>
@@ -588,7 +668,9 @@ const Home = () => {
           <p className="section-title gray-opaque slide-in">CONTACT US</p>
           <h1 className="header fade-in white">Have an idea?</h1>
           <button className="btn-transparent">
-            Co-Build with Us - hello@misfitlabs.vc
+            <a href={"mailto:hello@misfitlabs.vc?subject=Hello%21"}>
+              Co-Build with Us - hello@misfitlabs.vc
+            </a>
           </button>
           <img src={require("../theme/assets/ml-logo-footer.png")} />
         </Container>

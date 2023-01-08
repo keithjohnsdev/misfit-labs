@@ -1,5 +1,5 @@
 .hero {
-  height: 840px;
+  height: auto;
   margin-top: 110px;
   background-color: black;
   color: white;
@@ -8,25 +8,27 @@
 
 .hero-desc {
   font-family: "Vollkorn", serif;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 36px;
+  line-height: 54px;
   font-weight: 400;
   color: #ffffffb2;
+  margin: 100px 0 168px;
+
   & .first-line {
     color: #ffffff;
     font-weight: 700;
   }
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1300px) {
   .hero {
-    height: 620px;
     & .container {
       padding: 0 1% 0 9.375% !important;
     }
     .hero-desc {
       font-size: 28px;
       line-height: 42px;
+      margin: 90px 0 80px;
     }
     .hero .container {
       padding: 0 7.6% 0 9.375% !important;
@@ -35,19 +37,47 @@
 }
 
 @media only screen and (max-width: 960px) {
-
   .hero {
-    margin-top: 60px;
-    height: 560px;
+    margin-top: 110px;
     & .container {
       padding: 0 7.6% 0 9.375% !important;
-    }
-    & .break {
-      display: none;
     }
     .hero-desc {
       font-size: 20px;
       line-height: 30px;
-    }  
+      margin: 90px 0 65px;
+    }
+  }
+}
+
+@media only screen and (max-width: 762px) {
+  .hero .break {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    & h1 {
+      padding-top: 40px;
+    }
+    & .hero-desc {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .hero {
+    margin-top: 40px;
+    & h1 {
+      padding-top: 0px;
+    }
+    & .hero-desc {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 30px 0;
+    }
   }
 }

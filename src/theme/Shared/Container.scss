@@ -6,12 +6,19 @@
     }
 
     @media only screen and (max-width: 1800px) {
-        padding: 0 6.2%;
+        padding: 0 12%;
+    }
+
+    @media only screen and (max-width: 1600px) {
+        padding: 0 7.5%;
     }
     @media only screen and (max-width: 1440px) {
         padding: 0 9.375%;
     }
     @media only screen and (max-width: 960px) {
+        padding: 0 8.33%;
+    }
+    @media only screen and (max-width: 460px) {
         padding: 0 8.33%;
     }
 }

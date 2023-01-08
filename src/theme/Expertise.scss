@@ -27,13 +27,6 @@
       max-width: 289px;
       min-height: 54px;
 
-      &.left {
-        margin-left: 0;
-      }
-      &.right {
-        margin-right: 0;
-      }
-
       & img {
         position: absolute;
         z-index: 0;
@@ -75,10 +68,17 @@
         display: none;
       }
     }
+
+    &.small {
+      display: none;
+    }
   }
 }
 
 @media only screen and (max-width: 1440px) {
+  .expertise {
+    padding-bottom: 150px;
+  }
   .expertise .categories {
     margin-top: 84px;
 
@@ -108,7 +108,7 @@
 @media only screen and (max-width: 960px) {
   .expertise .categories {
     & .cat {
-      flex: 30%;
+      flex: 28%;
       margin: 15px 0;
       & p {
         font-size: 24px;
@@ -135,11 +135,121 @@
       }
       &.seven {
         max-width: 242px;
-        margin-right: 0px;
+        margin-right: 100px;
       }
       &.eight {
         max-width: 282px;
-        margin-left: 0px;
+        margin-left: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .expertise .categories {
+    & .cat {
+      flex: 24%;
+      margin: 5px 5px;
+      & p {
+        font-size: 20px;
+        line-height: 20px;
+      }
+
+      &.one {
+        max-width: 200px;
+      }
+      &.two {
+        max-width: 175px;
+      }
+      &.three {
+        max-width: 210px;
+      }
+      &.four {
+        max-width: 162px;
+      }
+      &.five {
+        max-width: 217px;
+      }
+      &.six {
+        max-width: 197px;
+      }
+      &.seven {
+        // max-width: 173px;
+        margin-right: 50px;
+        margin-left: 15px;
+      }
+      &.eight {
+        // max-width: 232px;
+        margin-left: 50px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .expertise {
+    padding-bottom: 60px;
+    & .categories {
+      margin-top: 35px;
+      &.large {
+        display: none;
+      }
+      &.small {
+        display: flex;
+      }
+      & .cat {
+        flex: 40%;
+        margin: 5px;
+        & p {
+          font-size: 20px;
+          line-height: 20px;
+        }
+        &.one {
+          max-width: none;
+          flex: 42%;
+        }
+        &.two {
+          max-width: none;
+          flex: 38%;
+        }
+        &.three {
+          max-width: none;
+          flex: 44%;
+        }
+        &.four {
+          max-width: none;
+          flex: 36%;
+        }
+        &.five {
+          max-width: none;
+        }
+        &.six {
+          max-width: none;
+        }
+        &.seven {
+          margin: 5px;
+          max-width: none;
+        }
+        &.eight {
+          margin: 5px;
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 463px) {
+    .expertise .categories {
+      & .cat {
+        flex: 40%;
+        margin: 0 5px;
+        padding: 5px;
+        min-height: 45px;
+        & p {
+          font-size: 14px;
+          line-height: 14px;
+        }
       }
     }
   }

@@ -99,6 +99,7 @@
     & p {
       font-size: 22px;
       line-height: 28.6px;
+      margin-top: 1em;
     }
   }
 }
@@ -132,6 +133,83 @@
     }
     & svg {
       width: 36px;
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 15% 6% 3%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 12% 6% 3%;
+    & p {
+      margin-top: 0.9em;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .team-grid .team-img {
+    width: 50%;
+    & .team-img-hover {
+      padding: 19.7% 8.8% 10%;
+      & h3 {
+        font-size: 20px;
+        line-height: 26px;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      & svg {
+        width: 45px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .team-grid .team-img .team-img-hover {
+    & h3 {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    & p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    & svg {
+      width: 36px;
+    }
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  .team-grid .team-img .team-img-hover {
+    padding: 12% 6% 3%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .team-grid .team-img {
+    width: 100%;
+    & .team-img-hover {
+      padding: 19.7% 8.8% 10%;
+      & h3 {
+        font-size: 20px;
+        line-height: 26px;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      & svg {
+        width: 45px;
+      }
     }
   }
 }

@@ -13,6 +13,8 @@
 
   & button {
     cursor: pointer;
+    min-width: fit-content;
+    white-space: nowrap;
   }
 
   & img {
@@ -49,8 +51,62 @@
 }
 
 @media only screen and (max-width: 1440px) {
+  .contact {
+    padding-bottom: 224px;
+
+    & img {
+      right: 5%;
+      top: 192px;
+    }
+  }
+
   .contact button {
     font-size: 18px;
     line-height: 18px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .contact {
+    text-align: center;
+    height: 800px;
+
+    & button {
+      margin-top: 71px;
+    }
+
+    & img {
+      position: relative;
+      width: 260px;
+      top: 100px;
+      margin: auto;
+      right: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .contact {
+    & button {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .contact {
+    & button {
+      padding: 25px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .contact {
+    & button {
+      padding: 15px 20px;
+      font-size: 12px;
+    }
   }
 }

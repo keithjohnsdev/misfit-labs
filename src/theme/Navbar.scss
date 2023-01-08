@@ -144,3 +144,43 @@
     right: -250px !important;
   }
 }
+
+@media only screen and (max-width: 720px) {
+  .navbar {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .navbar {
+    height: 60px;
+    padding: 0;
+
+    & .nav-logo {
+      padding: 15px 20px;
+      & svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    & .hamburger {
+      padding: 17px 20px;
+      & svg {
+        width: 24px;
+        height: 10px;
+      }
+    }
+    
+    & .mobile-menu {
+      top: 60px;
+      & p {
+        font-size: 12px;
+      }
+
+      &.hide {
+        right: -157px;
+      }
+    }
+  }
+}

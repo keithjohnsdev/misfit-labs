@@ -52,7 +52,7 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
-    margin-top: 20px;
+    margin-top: 22px;
     opacity: 0.7;
     padding-right: 25px;
     font-family: "Vollkorn", serif;
@@ -60,9 +60,9 @@
 
   & .platform-footer {
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 27px;
     position: absolute;
     top: 390px;
   }
@@ -78,8 +78,8 @@
     background: linear-gradient(
       to bottom,
       black 0%,
-      black 91%,
-      white 91%,
+      black 88%,
+      white 88%,
       white 100%
     );
 
@@ -110,9 +110,6 @@
     & .platform-desc {
       margin-top: 30px;
       width: 70%;
-      &.one {
-        width: 50%;
-      }
       &.three {
         width: 75%;
       }
@@ -120,6 +117,10 @@
     & .platform-footer {
       top: auto;
       bottom: 36px;
+
+      & br {
+        display: none;
+      }
 
       &.three {
         display: flex;
@@ -138,8 +139,66 @@
     background: linear-gradient(
       to bottom,
       black 0%,
-      black 91%,
-      white 91%,
+      black 85%,
+      white 85%,
+      white 100%
+    );
+    & .platform-boxes {
+      padding-top: 15px;
+    }
+    & .platform-box {
+      height: 220px;
+      & .logo-wrapper {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        & img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      & .platform-title {
+        font-size: 30px;
+        line-height: 36px;
+
+        & .accent-text {
+          margin-left: 0.25em;
+        }
+      }
+      & .platform-desc {
+        width: 70%;
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 27px;
+        &.three {
+          width: 75%;
+        }
+      }
+      & .platform-footer {
+        bottom: 26px;
+        font-size: 16px;
+        line-height: 24px;
+
+        &.three {
+          display: flex;
+
+          & .opacity05 {
+            margin: 0 0.25em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .platform {
+    height: 910px;
+    background: linear-gradient(
+      to bottom,
+      black 0%,
+      black 85%,
+      white 85%,
       white 100%
     );
     & .platform-boxes {
@@ -170,16 +229,17 @@
         font-size: 18px;
         line-height: 27px;
         &.one {
-          width: 50%;
+          width: 70%;
         }
         &.three {
-          width: 75%;
+          width: 70%;
         }
       }
       & .platform-footer {
         bottom: 26px;
         font-size: 16px;
         line-height: 24px;
+        padding-right: 2em;
 
         &.three {
           display: flex;
@@ -188,6 +248,98 @@
             margin: 0 0.25em;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 693px) {
+  .platform {
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      black 0%,
+      black 88%,
+      white 88%,
+      white 100%
+    );
+    & .platform-boxes {
+      padding-top: 15px;
+    }
+    & .platform-box {
+      height: 260px;
+      & .logo-wrapper {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        & img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      & .platform-title {
+        font-size: 24px;
+        line-height: 28.8px;
+        display: block;
+
+        & .accent-text {
+          margin-left: 0;
+        }
+      }
+      & .platform-desc {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        &.one {
+          width: 100%;
+        }
+        &.three {
+          width: 100%;
+        }
+      }
+      & .platform-footer {
+        bottom: 26px;
+        font-size: 13px;
+        line-height: 19.5px;
+        padding-right: 2em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .platform {
+    & .platform-boxes {
+      padding-top: 8px;
+    }
+    & .container {
+      padding: 0 5.5%;
+    }
+    & .platform-box {
+      padding-left: 30px;
+      & .logo-wrapper {
+        top: -16px;
+        right: -10px;
+        & img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      & .platform-footer {
+        & br {
+          display: block;
+        }
+        &.three {
+          display: block;
+
+          & .opacity05 {
+            margin: 0 0.25em;
+          }
+        }
+      }
+      &.last {
+        margin-bottom: 0;
       }
     }
   }
