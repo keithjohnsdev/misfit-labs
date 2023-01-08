@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/misfit-labs/static/css/main.0785ea2c.css",
-    "main.js": "/misfit-labs/static/js/main.0072d91e.js",
+    "main.css": "/misfit-labs/static/css/main.55a24f1f.css",
+    "main.js": "/misfit-labs/static/js/main.44cae6a7.js",
     "static/js/787.63e1a317.chunk.js": "/misfit-labs/static/js/787.63e1a317.chunk.js",
-    "static/media/joey.png": "/misfit-labs/static/media/joey.898baa6b5c559b319b4e.png",
-    "static/media/scott.png": "/misfit-labs/static/media/scott.082fb2c9db9da52352b9.png",
-    "static/media/ben.png": "/misfit-labs/static/media/ben.2a6bc893e4fd88297456.png",
-    "static/media/mark.png": "/misfit-labs/static/media/mark.84d8bd61979ccf147707.png",
-    "static/media/ken.png": "/misfit-labs/static/media/ken.9019f6b71fbff3e8d46e.png",
-    "static/media/ant.png": "/misfit-labs/static/media/ant.9eec4afcb75b00a63082.png",
-    "static/media/kyle.png": "/misfit-labs/static/media/kyle.a407a975884c627f4278.png",
-    "static/media/vested-interest.png": "/misfit-labs/static/media/vested-interest.c6951000dd965288153a.png",
-    "static/media/investing.png": "/misfit-labs/static/media/investing.e545db9855423ff13010.png",
-    "static/media/teams.png": "/misfit-labs/static/media/teams.34eed161e450773fe5a4.png",
-    "static/media/ideation.png": "/misfit-labs/static/media/ideation.dfa6d70b1ebfb1dfb225.png",
-    "static/media/tech.png": "/misfit-labs/static/media/tech.dd1f4d387e1c41ddf0e8.png",
+    "static/media/scott.png": "/misfit-labs/static/media/scott.e608a6250dc167bd523c.png",
+    "static/media/joey.png": "/misfit-labs/static/media/joey.dc58dac28e6e6e7e15fa.png",
+    "static/media/mark.png": "/misfit-labs/static/media/mark.603680234ec0137b37bc.png",
+    "static/media/ken.png": "/misfit-labs/static/media/ken.e9534542995348e03419.png",
+    "static/media/ant.png": "/misfit-labs/static/media/ant.83a3521d3bd420aef77a.png",
+    "static/media/ben.png": "/misfit-labs/static/media/ben.434b9c945959aaf2e16d.png",
+    "static/media/kyle.png": "/misfit-labs/static/media/kyle.6c248a45f2771e666948.png",
+    "static/media/vested-interest.png": "/misfit-labs/static/media/vested-interest.d61ae568721eb1a37caa.png",
+    "static/media/investing.png": "/misfit-labs/static/media/investing.494ffc3e358411015365.png",
+    "static/media/teams.png": "/misfit-labs/static/media/teams.8984925fba8f9be8198f.png",
+    "static/media/ideation.png": "/misfit-labs/static/media/ideation.ce012817aa604c401bed.png",
+    "static/media/tech.png": "/misfit-labs/static/media/tech.3a971c1537e18227e474.png",
+    "static/media/join-the-gang.png": "/misfit-labs/static/media/join-the-gang.647198d989297903f62e.png",
+    "static/media/startups.png": "/misfit-labs/static/media/startups.ebd83d2f4ba44ac9142c.png",
+    "static/media/scaling.png": "/misfit-labs/static/media/scaling.1b5a5a926b5bc44e7b24.png",
     "index.html": "/misfit-labs/index.html",
-    "main.0785ea2c.css.map": "/misfit-labs/static/css/main.0785ea2c.css.map",
-    "main.0072d91e.js.map": "/misfit-labs/static/js/main.0072d91e.js.map",
+    "main.55a24f1f.css.map": "/misfit-labs/static/css/main.55a24f1f.css.map",
+    "main.44cae6a7.js.map": "/misfit-labs/static/js/main.44cae6a7.js.map",
     "787.63e1a317.chunk.js.map": "/misfit-labs/static/js/787.63e1a317.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0785ea2c.css",
-    "static/js/main.0072d91e.js"
+    "static/css/main.55a24f1f.css",
+    "static/js/main.44cae6a7.js"
   ]
 }
