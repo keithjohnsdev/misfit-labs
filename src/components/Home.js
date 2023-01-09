@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef, useState } from "react";
 import Container from "./Shared/Container";
+import { useInView } from "react-intersection-observer";
 
 const Home = () => {
   const platform = useRef(null);
@@ -10,6 +11,20 @@ const Home = () => {
   const expertise = useRef(null);
   const team = useRef(null);
   const [showMenu, setShowMenu] = useState(false);
+  const [joeyClicked, setJoeyClicked] = useState(false);
+  const [kyleClicked, setKyleClicked] = useState(false);
+  const [scottClicked, setScottClicked] = useState(false);
+  const [antClicked, setAntClicked] = useState(false);
+  const [kenClicked, setKenClicked] = useState(false);
+  const [benClicked, setBenClicked] = useState(false);
+  const [markClicked, setMarkClicked] = useState(false);
+
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  
 
   function hamburgerToggle() {
     setShowMenu(!showMenu);
@@ -114,7 +129,7 @@ const Home = () => {
             </svg>
           </div>
         </div>
-        <div className={showMenu ? "mobile-menu" : "mobile-menu hide"}>
+        <div className={showMenu ? "mobile-menu" : "mobile-menu hide"} id="menu">
           <p
             className="nav"
             onClick={() =>
@@ -242,7 +257,7 @@ const Home = () => {
       <section className="formula" ref={formula}>
         <Container>
           <p className="section-title gray slide-in">OUR FORMULA</p>
-          <h1 className="header fade-in black">
+          <h1 ref={ref} className={inView ? "header black fade-in" : "header transparent"}>
             A technology lab
             <br /> for innovation
           </h1>
@@ -473,7 +488,7 @@ const Home = () => {
           <p className="section-title gray-opaque slide-in">OUR TEAM</p>
           <h1 className="header fade-in white">Founding Partners</h1>
         </Container>
-        <div className="team-grid">
+        <div className="team-grid desktop">
           <div className="team-img">
             <img src={require("../theme/assets/joey.png")} />
             <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/joey-gutierrez-7b281225/", "_blank")}>
@@ -655,6 +670,195 @@ const Home = () => {
                 </svg>
               </div>
             </div>
+          </div>
+          <div className="team-img join-gang">
+            <a href={"mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"}>
+              <img src={require("../theme/assets/join-the-gang.png")} />
+            </a>
+          </div>
+        </div>
+        <div className="team-grid mobile">
+          <div className="team-img" onClick={()=>setJoeyClicked(true)}>
+            <img src={require("../theme/assets/joey.png")} />
+            {joeyClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/joey-gutierrez-7b281225/", "_blank")}>
+              <h3>JOEY GUTIERREZ</h3>
+              <p>
+                Entrepreneur, corporate development executive leading day-to-day
+                operations.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img" onClick={()=>setKyleClicked(true)}>
+            <img src={require("../theme/assets/kyle.png")} />
+            {kyleClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kylecarriedo/", "_blank")}>
+              <h3>KYLE CARRIEDO</h3>
+              <p>
+                Technology leader, senior R&D at Apple (iTunes, Apple Watch,
+                Apple TV, iTunesU)
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img">
+            <img src={require("../theme/assets/scott.png")} onClick={()=>setScottClicked(true)}/>
+            {scottClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/scottwjohns/", "_blank")}>
+              <h3>SCOTT JOHNS</h3>
+              <p>
+                Viking warrior and UI/UX designer that has worked with with
+                dozens of startups.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img">
+            <img src={require("../theme/assets/ant.png")} onClick={()=>setAntClicked(true)}/>
+            {antClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/anthony-alviz-a4048362/", "_blank")}>
+              <h3>ANTHONY ALVIZ</h3>
+              <p>
+                Lead front-end engineer, manager and black belt jiu jitsu
+                champion.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img">
+            <img src={require("../theme/assets/ken.png")} onClick={()=>setKenClicked(true)}/>
+            {kenClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kencheung/", "_blank")}>
+              <h3>KEN CHEUNG</h3>
+              <p>
+                Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
+                Facebook, Instagram.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img">
+            <img src={require("../theme/assets/ben.png")} onClick={()=>setBenClicked(true)}/>
+            {benClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/bsharpe/", "_blank")}>
+              <h3>BEN SHARPE</h3>
+              <p>
+                Head wizard, Apple & Microsoft Fellow with over 5 technology
+                patents.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
+          </div>
+          <div className="team-img">
+            <img src={require("../theme/assets/mark.png")} onClick={()=>setMarkClicked(true)}/>
+            {markClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/markosenga/", "_blank")}>
+              <h3>MARK OSENGA</h3>
+              <p>
+                Executive managing portfolio operations, training and
+                back-office administration.
+              </p>
+              <div className="svg-wrapper">
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>}
           </div>
           <div className="team-img join-gang">
             <a href={"mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"}>

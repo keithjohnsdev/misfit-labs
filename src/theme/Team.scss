@@ -15,6 +15,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  &.mobile {
+    display: none;
+  }
+
   & .team-img {
     width: 25%;
     position: relative;
@@ -136,7 +140,16 @@
     }
   }
 }
-
+@media only screen and (max-width: 960px) {
+  .team-grid {
+    &.desktop {
+      display: none;
+    }
+    &.mobile {
+      display: flex;
+    }
+  }
+}
 @media only screen and (max-width: 920px) {
   .team-grid .team-img .team-img-hover {
     padding: 15% 6% 3%;
