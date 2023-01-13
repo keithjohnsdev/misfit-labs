@@ -1,7 +1,13 @@
 import React from "react";
 import { useRef, useState } from "react";
 import Container from "./Shared/Container";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
+import {
+  FadeInOnView,
+  FadeSlideLeftOnView,
+  FadeSlideRightOnView,
+  FadeSlideUpOnView,
+} from "./Shared/AnimatedComponents";
 
 const Home = () => {
   const platform = useRef(null);
@@ -19,12 +25,11 @@ const Home = () => {
   const [benClicked, setBenClicked] = useState(false);
   const [markClicked, setMarkClicked] = useState(false);
 
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-  
+  // const { ref, inView } = useInView({
+  //   /* Optional options */
+  //   threshold: 0.5,
+  //   triggerOnce: true,
+  // });
 
   function hamburgerToggle() {
     setShowMenu(!showMenu);
@@ -129,7 +134,10 @@ const Home = () => {
             </svg>
           </div>
         </div>
-        <div className={showMenu ? "mobile-menu" : "mobile-menu hide"} id="menu">
+        <div
+          className={showMenu ? "mobile-menu" : "mobile-menu hide"}
+          id="menu"
+        >
           <p
             className="nav"
             onClick={() =>
@@ -173,105 +181,125 @@ const Home = () => {
       </div>
       <section className="hero">
         <Container>
-          <h1 className="header fade-in">
-            Here’s to the Misfits,{` `}
-            <br className="break" />
-            the troublemakers…
-          </h1>
-          <p className="hero-desc slide-up">
-            <span className="first-line">
-              Misfit Labs is a technology venture studio H.Q. in Miami, FL.
-            </span>
-            <br /> We develop, manage and scale products in partnership with{" "}
-            <br className="break" />
-            entrepreneurs, investors and innovative corporations.
-          </p>
+          <FadeInOnView>
+            <h1 className="header">
+              Here’s to the Misfits,{` `}
+              <br className="break" />
+              the troublemakers…
+            </h1>
+          </FadeInOnView>
+          <FadeSlideUpOnView delay="1s">
+            <p className="hero-desc">
+              <span className="first-line">
+                Misfit Labs is a technology venture studio H.Q. in Miami, FL.
+              </span>
+              <br /> We develop, manage and scale products in partnership with{" "}
+              <br className="break" />
+              entrepreneurs, investors and innovative corporations.
+            </p>
+          </FadeSlideUpOnView>
         </Container>
       </section>
       <section className="platform" ref={platform}>
         <Container>
-          <p className="section-title slide-in">OUR PLATFORM</p>
+          <FadeSlideRightOnView delay="1.8s">
+            <p className="section-title slide-in">OUR PLATFORM</p>
+          </FadeSlideRightOnView>
           <div className="platform-boxes">
-            <div className="platform-box">
-              <div className="logo-wrapper">
-                <img src={require("../theme/assets/startups.png")} />
-              </div>
-              <p className="platform-title">
-                For
-                <p>
-                  <span className="accent-text">Startups</span>
+            <FadeSlideUpOnView>
+              <div className="platform-box">
+                <div className="logo-wrapper">
+                  <img src={require("../theme/assets/startups.png")} />
+                </div>
+                <p className="platform-title">
+                  For
+                  <p>
+                    <span className="accent-text">Startups</span>
+                  </p>
                 </p>
-              </p>
-              <p className="platform-desc one">
-                We take products from concept to <br /> scalable companies.
-              </p>
-              <p className="platform-footer">
-                DESIGN <span className="opacity05">•</span> INVEST{" "}
-                <span className="opacity05">•</span> BUILD{" "}
-                <span className="opacity05">•</span> SCALE
-              </p>
-            </div>
-            <div className="platform-box">
-              <div className="logo-wrapper">
-                <img src={require("../theme/assets/corporations.png")} />
+                <p className="platform-desc one">
+                  We take products from concept to <br /> scalable companies.
+                </p>
+                <p className="platform-footer">
+                  DESIGN <span className="opacity05">•</span> INVEST{" "}
+                  <span className="opacity05">•</span> BUILD{" "}
+                  <span className="opacity05">•</span> SCALE
+                </p>
               </div>
-              <p className="platform-title">
-                For
-                <br />
-                <span className="accent-text">Corporations</span>
-              </p>
-              <p className="platform-desc">
-                We design and build corporation innovation programs to foster
-                the way of the future.
-              </p>
-              <p className="platform-footer">
-                RESEARCH <span className="opacity05">•</span> STRATEGY{" "}
-                <span className="opacity05">•</span> DESIGN{" "}
-                <span className="opacity05">•</span>
-                <br /> BUILD <span className="opacity05">•</span>{" "}
-                COMMERCIALIZATION
-              </p>
-            </div>
-            <div className="platform-box last">
-              <div className="logo-wrapper">
-                <img src={require("../theme/assets/investors.png")} />
+            </FadeSlideUpOnView>
+            <FadeSlideUpOnView delay="0.6s">
+              <div className="platform-box">
+                <div className="logo-wrapper">
+                  <img src={require("../theme/assets/corporations.png")} />
+                </div>
+                <p className="platform-title">
+                  For
+                  <br />
+                  <span className="accent-text">Corporations</span>
+                </p>
+                <p className="platform-desc">
+                  We design and build corporation innovation programs to foster
+                  the way of the future.
+                </p>
+                <p className="platform-footer">
+                  RESEARCH <span className="opacity05">•</span> STRATEGY{" "}
+                  <span className="opacity05">•</span> DESIGN{" "}
+                  <span className="opacity05">•</span>
+                  <br /> BUILD <span className="opacity05">•</span>{" "}
+                  COMMERCIALIZATION
+                </p>
               </div>
-              <p className="platform-title">
-                For
-                <br />
-                <span className="accent-text">Investors</span>
-              </p>
-              <p className="platform-desc three">
-                We co-develop and build products under a shared vision that
-                deliver exponential returns.
-              </p>
-              <p className="platform-footer three">
-                TAILORED VC FUNDS {` `}
-                <span className="opacity05">•</span>
-                <p> VENTURE DEVELOPMENT</p>
-              </p>
-            </div>
+            </FadeSlideUpOnView>
+            <FadeSlideUpOnView delay="1s">
+              <div className="platform-box last">
+                <div className="logo-wrapper">
+                  <img src={require("../theme/assets/investors.png")} />
+                </div>
+                <p className="platform-title">
+                  For
+                  <br />
+                  <span className="accent-text">Investors</span>
+                </p>
+                <p className="platform-desc three">
+                  We co-develop and build products under a shared vision that
+                  deliver exponential returns.
+                </p>
+                <p className="platform-footer three">
+                  TAILORED VC FUNDS {` `}
+                  <span className="opacity05">•</span>
+                  <p> VENTURE DEVELOPMENT</p>
+                </p>
+              </div>
+            </FadeSlideUpOnView>
           </div>
         </Container>
       </section>
       <section className="formula" ref={formula}>
         <Container>
-          <p className="section-title gray slide-in">OUR FORMULA</p>
-          <h1 ref={ref} className={inView ? "header black fade-in" : "header transparent"}>
-            A technology lab
-            <br /> for innovation
-          </h1>
+          <FadeSlideRightOnView>
+            <p className="section-title gray slide-in">OUR FORMULA</p>
+          </FadeSlideRightOnView>
+          <FadeInOnView>
+            <h1 className="header black fade-in">
+              A technology lab
+              <br /> for innovation
+            </h1>
+          </FadeInOnView>
           <div className="serpentine">
             <div className="serpentine-row">
-              <div className="img-div">
-                <img src={require("../theme/assets/ideation.png")} />
-              </div>
+              <FadeSlideRightOnView>
+                <div className="img-div">
+                  <img src={require("../theme/assets/ideation.png")} />
+                </div>
+              </FadeSlideRightOnView>
               <div className="text">
-                <h3>Ideation</h3>
-                <p>
-                  Validating concepts, building business models, design thinking
-                  and technology architecture.
-                </p>
+                <FadeSlideLeftOnView>
+                  <h3>Ideation</h3>
+                  <p>
+                    Validating concepts, building business models, design
+                    thinking and technology architecture.
+                  </p>
+                </FadeSlideLeftOnView>
               </div>
             </div>
             <div className="serpentine-row">
@@ -279,26 +307,34 @@ const Home = () => {
                 <img src={require("../theme/assets/investing.png")} />
               </div>
               <div className="text">
-                <h3>Investing</h3>
-                <p>
-                  Providing venture capital investment through resource
-                  contribution and <br /> capital allocation.
-                </p>
-              </div>
-              <div className="img-div right">
-                <img src={require("../theme/assets/investing.png")} />
-              </div>
+                <FadeSlideRightOnView>
+                  <h3>Investing</h3>
+                  <p>
+                    Providing venture capital investment through resource
+                    contribution and <br /> capital allocation.
+                  </p>
+                </FadeSlideRightOnView>
+              </div>{" "}
+              <FadeSlideLeftOnView>
+                <div className="img-div right">
+                  <img src={require("../theme/assets/investing.png")} />
+                </div>{" "}
+              </FadeSlideLeftOnView>
             </div>
             <div className="serpentine-row">
-              <div className="img-div">
-                <img src={require("../theme/assets/building.png")} />
-              </div>
+              <FadeSlideRightOnView>
+                <div className="img-div">
+                  <img src={require("../theme/assets/building.png")} />
+                </div>
+              </FadeSlideRightOnView>
               <div className="text">
-                <h3>Building</h3>
-                <p>
-                  In-house technology and product development team experienced
-                  building products from concept to unicorn.
-                </p>
+                <FadeSlideLeftOnView>
+                  <h3>Building</h3>
+                  <p>
+                    In-house technology and product development team experienced
+                    building products from concept to unicorn.
+                  </p>
+                </FadeSlideLeftOnView>
               </div>
             </div>
             <div className="serpentine-row last">
@@ -306,26 +342,34 @@ const Home = () => {
                 <img src={require("../theme/assets/scaling.png")} />
               </div>
               <div className="text">
-                <h3>Scaling</h3>
-                <p>
-                  Supporting product growth through corporate development
-                  initiatives and strategic network building.
-                </p>
+                <FadeSlideRightOnView>
+                  <h3>Scaling</h3>
+                  <p>
+                    Supporting product growth through corporate development
+                    initiatives and strategic network building.
+                  </p>
+                </FadeSlideRightOnView>
               </div>
-              <div className="img-div right">
-                <img src={require("../theme/assets/scaling.png")} />
-              </div>
+              <FadeSlideLeftOnView>
+                <div className="img-div right">
+                  <img src={require("../theme/assets/scaling.png")} />
+                </div>
+              </FadeSlideLeftOnView>
             </div>
           </div>
         </Container>
       </section>
       <section className="ingredients desktop" ref={ingredients}>
         <Container>
-          <p className="section-title gray slide-in">OUR INGREDIENTS</p>
-          <h1 className="header fade-in">
-            Ingredients for
-            <br /> a winning recipe
-          </h1>
+          <FadeSlideRightOnView>
+            <p className="section-title gray slide-in">OUR INGREDIENTS</p>
+          </FadeSlideRightOnView>
+          <FadeInOnView>
+            <h1 className="header fade-in">
+              Ingredients for
+              <br /> a winning recipe
+            </h1>
+          </FadeInOnView>
           <div className="recipe desktop">
             <div className="ingredient-box">
               <img src={require("../theme/assets/tech.png")} />
@@ -384,11 +428,15 @@ const Home = () => {
       </section>
       <section className="expertise" ref={expertise}>
         <Container>
-          <p className="section-title gray slide-in">OUR EXPERTISE</p>
-          <h1 className="header fade-in">
-            An extension of
-            <br /> your team
-          </h1>
+          <FadeSlideRightOnView>
+            <p className="section-title gray slide-in">OUR EXPERTISE</p>
+          </FadeSlideRightOnView>
+          <FadeInOnView>
+            <h1 className="header fade-in">
+              An extension of
+              <br /> your team
+            </h1>
+          </FadeInOnView>
           <div className="categories large">
             <div className="cat one left">
               <img src={require("../theme/assets/bg-1.png")} />
@@ -485,13 +533,25 @@ const Home = () => {
       </section>
       <section className="team" ref={team}>
         <Container>
-          <p className="section-title gray-opaque slide-in">OUR TEAM</p>
-          <h1 className="header fade-in white">Founding Partners</h1>
+          <FadeSlideRightOnView>
+            <p className="section-title gray-opaque slide-in">OUR TEAM</p>
+          </FadeSlideRightOnView>
+          <FadeInOnView>
+            <h1 className="header fade-in white">Founding Partners</h1>
+          </FadeInOnView>
         </Container>
         <div className="team-grid desktop">
           <div className="team-img">
             <img src={require("../theme/assets/joey.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/joey-gutierrez-7b281225/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
+                  "_blank"
+                )
+              }
+            >
               <h3>JOEY GUTIERREZ</h3>
               <p>
                 Entrepreneur, corporate development executive leading day-to-day
@@ -517,7 +577,15 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/kyle.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kylecarriedo/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/kylecarriedo/",
+                  "_blank"
+                )
+              }
+            >
               <h3>KYLE CARRIEDO</h3>
               <p>
                 Technology leader, senior R&D at Apple (iTunes, Apple Watch,
@@ -543,7 +611,15 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/scott.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/scottwjohns/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/scottwjohns/",
+                  "_blank"
+                )
+              }
+            >
               <h3>SCOTT JOHNS</h3>
               <p>
                 Viking warrior and UI/UX designer that has worked with with
@@ -569,7 +645,15 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ant.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/anthony-alviz-a4048362/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/anthony-alviz-a4048362/",
+                  "_blank"
+                )
+              }
+            >
               <h3>ANTHONY ALVIZ</h3>
               <p>
                 Lead front-end engineer, manager and black belt jiu jitsu
@@ -595,7 +679,12 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ken.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kencheung/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/kencheung/", "_blank")
+              }
+            >
               <h3>KEN CHEUNG</h3>
               <p>
                 Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
@@ -621,7 +710,12 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/ben.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/bsharpe/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/bsharpe/", "_blank")
+              }
+            >
               <h3>BEN SHARPE</h3>
               <p>
                 Head wizard, Apple & Microsoft Fellow with over 5 technology
@@ -647,7 +741,12 @@ const Home = () => {
           </div>
           <div className="team-img">
             <img src={require("../theme/assets/mark.png")} />
-            <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/markosenga/", "_blank")}>
+            <div
+              className="team-img-hover"
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/markosenga/", "_blank")
+              }
+            >
               <h3>MARK OSENGA</h3>
               <p>
                 Executive managing portfolio operations, training and
@@ -672,196 +771,286 @@ const Home = () => {
             </div>
           </div>
           <div className="team-img join-gang">
-            <a href={"mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"}>
+            <a
+              href={
+                "mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"
+              }
+            >
               <img src={require("../theme/assets/join-the-gang.png")} />
             </a>
           </div>
         </div>
         <div className="team-grid mobile">
-          <div className="team-img" onClick={()=>setJoeyClicked(true)}>
+          <div className="team-img" onClick={() => setJoeyClicked(true)}>
             <img src={require("../theme/assets/joey.png")} />
-            {joeyClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/joey-gutierrez-7b281225/", "_blank")}>
-              <h3>JOEY GUTIERREZ</h3>
-              <p>
-                Entrepreneur, corporate development executive leading day-to-day
-                operations.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            {joeyClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>JOEY GUTIERREZ</h3>
+                <p>
+                  Entrepreneur, corporate development executive leading
+                  day-to-day operations.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
-          <div className="team-img" onClick={()=>setKyleClicked(true)}>
+          <div className="team-img" onClick={() => setKyleClicked(true)}>
             <img src={require("../theme/assets/kyle.png")} />
-            {kyleClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kylecarriedo/", "_blank")}>
-              <h3>KYLE CARRIEDO</h3>
-              <p>
-                Technology leader, senior R&D at Apple (iTunes, Apple Watch,
-                Apple TV, iTunesU)
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            {kyleClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/kylecarriedo/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>KYLE CARRIEDO</h3>
+                <p>
+                  Technology leader, senior R&D at Apple (iTunes, Apple Watch,
+                  Apple TV, iTunesU)
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img">
-            <img src={require("../theme/assets/scott.png")} onClick={()=>setScottClicked(true)}/>
-            {scottClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/scottwjohns/", "_blank")}>
-              <h3>SCOTT JOHNS</h3>
-              <p>
-                Viking warrior and UI/UX designer that has worked with with
-                dozens of startups.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            <img
+              src={require("../theme/assets/scott.png")}
+              onClick={() => setScottClicked(true)}
+            />
+            {scottClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/scottwjohns/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>SCOTT JOHNS</h3>
+                <p>
+                  Viking warrior and UI/UX designer that has worked with with
+                  dozens of startups.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img">
-            <img src={require("../theme/assets/ant.png")} onClick={()=>setAntClicked(true)}/>
-            {antClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/anthony-alviz-a4048362/", "_blank")}>
-              <h3>ANTHONY ALVIZ</h3>
-              <p>
-                Lead front-end engineer, manager and black belt jiu jitsu
-                champion.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            <img
+              src={require("../theme/assets/ant.png")}
+              onClick={() => setAntClicked(true)}
+            />
+            {antClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/anthony-alviz-a4048362/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>ANTHONY ALVIZ</h3>
+                <p>
+                  Lead front-end engineer, manager and black belt jiu jitsu
+                  champion.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img">
-            <img src={require("../theme/assets/ken.png")} onClick={()=>setKenClicked(true)}/>
-            {kenClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/kencheung/", "_blank")}>
-              <h3>KEN CHEUNG</h3>
-              <p>
-                Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
-                Facebook, Instagram.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            <img
+              src={require("../theme/assets/ken.png")}
+              onClick={() => setKenClicked(true)}
+            />
+            {kenClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/kencheung/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>KEN CHEUNG</h3>
+                <p>
+                  Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
+                  Facebook, Instagram.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img">
-            <img src={require("../theme/assets/ben.png")} onClick={()=>setBenClicked(true)}/>
-            {benClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/bsharpe/", "_blank")}>
-              <h3>BEN SHARPE</h3>
-              <p>
-                Head wizard, Apple & Microsoft Fellow with over 5 technology
-                patents.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            <img
+              src={require("../theme/assets/ben.png")}
+              onClick={() => setBenClicked(true)}
+            />
+            {benClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open("https://www.linkedin.com/in/bsharpe/", "_blank")
+                }
+              >
+                <h3>BEN SHARPE</h3>
+                <p>
+                  Head wizard, Apple & Microsoft Fellow with over 5 technology
+                  patents.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img">
-            <img src={require("../theme/assets/mark.png")} onClick={()=>setMarkClicked(true)}/>
-            {markClicked && <div className="team-img-hover" onClick={()=> window.open("https://www.linkedin.com/in/markosenga/", "_blank")}>
-              <h3>MARK OSENGA</h3>
-              <p>
-                Executive managing portfolio operations, training and
-                back-office administration.
-              </p>
-              <div className="svg-wrapper">
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 54 54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
-                    fill="white"
-                  />
-                </svg>
+            <img
+              src={require("../theme/assets/mark.png")}
+              onClick={() => setMarkClicked(true)}
+            />
+            {markClicked && (
+              <div
+                className="team-img-hover"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/markosenga/",
+                    "_blank"
+                  )
+                }
+              >
+                <h3>MARK OSENGA</h3>
+                <p>
+                  Executive managing portfolio operations, training and
+                  back-office administration.
+                </p>
+                <div className="svg-wrapper">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54ZM14.85 37.8H20.3727V21.2318H14.85V37.8ZM14.85 16.2603C14.85 17.7845 16.0849 19.0227 17.6125 19.0227C19.1345 19.0227 20.3727 17.7845 20.3727 16.2603C20.3727 14.7382 19.1345 13.5 17.6125 13.5C16.0871 13.5 14.85 14.736 14.85 16.2603ZM34.945 37.8H40.2546V28.7063C40.2546 24.2417 39.2605 20.8077 33.8813 20.8077C31.2967 20.8077 29.5637 22.1817 28.8545 23.4851H28.7828V21.2197H23.6864V37.8H28.9948V29.5976C28.9948 27.4349 29.4201 25.3407 32.1847 25.3407C34.9086 25.3407 34.945 27.8138 34.945 29.7368V37.8Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
           <div className="team-img join-gang">
-            <a href={"mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"}>
+            <a
+              href={
+                "mailto:hello@misfitlabs.vc?subject=I want to join the gang%21"
+              }
+            >
               <img src={require("../theme/assets/join-the-gang.png")} />
             </a>
           </div>
