@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/misfit-labs/static/css/main.30b36122.css",
-    "main.js": "/misfit-labs/static/js/main.2ddd9c90.js",
+    "main.js": "/misfit-labs/static/js/main.d18dba7e.js",
     "static/js/787.63e1a317.chunk.js": "/misfit-labs/static/js/787.63e1a317.chunk.js",
     "static/media/scott.png": "/misfit-labs/static/media/scott.e608a6250dc167bd523c.png",
     "static/media/joey.png": "/misfit-labs/static/media/joey.dc58dac28e6e6e7e15fa.png",
@@ -20,11 +20,11 @@
     "static/media/scaling.png": "/misfit-labs/static/media/scaling.1b5a5a926b5bc44e7b24.png",
     "index.html": "/misfit-labs/index.html",
     "main.30b36122.css.map": "/misfit-labs/static/css/main.30b36122.css.map",
-    "main.2ddd9c90.js.map": "/misfit-labs/static/js/main.2ddd9c90.js.map",
+    "main.d18dba7e.js.map": "/misfit-labs/static/js/main.d18dba7e.js.map",
     "787.63e1a317.chunk.js.map": "/misfit-labs/static/js/787.63e1a317.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30b36122.css",
-    "static/js/main.2ddd9c90.js"
+    "static/js/main.d18dba7e.js"
   ]
 }
