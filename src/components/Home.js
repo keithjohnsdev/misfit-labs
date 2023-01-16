@@ -791,7 +791,7 @@ const Home = () => {
         <div className="team-grid mobile">
           <div className="team-img" onClick={() => setJoeyClicked(true)}>
             <img src={require("../theme/assets/joey.png")} />
-            {joeyClicked && (
+            {joeyClicked ? (
               <div
                 className="team-img-hover"
                 onClick={() => setJoeyClicked(false)}
@@ -824,6 +824,8 @@ const Home = () => {
                   </svg>
                 </div>
               </div>
+            ) : (
+              <></>
             )}
           </div>
           <div className="team-img" onClick={() => setKyleClicked(true)}>
