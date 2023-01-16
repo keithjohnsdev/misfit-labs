@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 import Container from "./Shared/Container";
-// import { useInView } from "react-intersection-observer";
 import {
   FadeInOnView,
   FadeSlideLeftOnView,
@@ -179,15 +178,21 @@ const Home = () => {
           >
             Team
           </p>
-          <p className="nav email">hello@misfitlabs.vc</p>
+          <p className="nav email">
+            <a
+              className="mobile-email-link"
+              href={"mailto:hello@misfitlabs.vc?subject=Hello%21"}
+            >
+              hello@misfitlabs.vc
+            </a>
+          </p>
         </div>
       </div>
       <section className="hero">
         <Container>
           <FadeInOnView>
             <h1 className="header">
-              Here’s to the Misfits,
-              <br className="break" />
+              Here’s to the Misfits, <br className="break" />
               the troublemakers…
             </h1>
           </FadeInOnView>
@@ -312,9 +317,11 @@ const Home = () => {
               </div>
             </div>
             <div className="serpentine-row">
-              <div className="img-div mobile">
-                <img src={require("../theme/assets/investing.png")} />
-              </div>
+              <FadeSlideLeftOnView>
+                <div className="img-div mobile">
+                  <img src={require("../theme/assets/investing.png")} />
+                </div>{" "}
+              </FadeSlideLeftOnView>
               <div className="text">
                 <FadeSlideRightOnView>
                   <h3>Investing</h3>
@@ -347,9 +354,11 @@ const Home = () => {
               </div>
             </div>
             <div className="serpentine-row last">
-              <div className="img-div mobile">
-                <img src={require("../theme/assets/scaling.png")} />
-              </div>
+              <FadeSlideLeftOnView>
+                <div className="img-div mobile">
+                  <img src={require("../theme/assets/scaling.png")} />
+                </div>
+              </FadeSlideLeftOnView>
               <div className="text">
                 <FadeSlideRightOnView>
                   <h3>Scaling</h3>
@@ -789,26 +798,34 @@ const Home = () => {
           </div>
         </div>
         <div className="team-grid mobile">
-          <div className="team-img" onClick={() => setJoeyClicked(true)}>
-            <img src={require("../theme/assets/joey.png")} />
+          <div
+            className="team-img"
+            onClick={() => setJoeyClicked(!joeyClicked)}
+          >
+            <img
+              src={require("../theme/assets/joey.png")}
+              alt="Joey Gutierrez, Misfit Labs"
+            />
             {joeyClicked ? (
               <div
                 className="team-img-hover"
-                onClick={() => setJoeyClicked(false)}
+                onClick={() => setJoeyClicked(!joeyClicked)}
               >
                 <h3>JOEY GUTIERREZ</h3>
                 <p>
                   Entrepreneur and corporate development executive leading
                   day-to-day operations.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
-                    onClick={() =>
-                      window.open(
-                        "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
-                        "_blank"
-                      )
-                    }
                     width="54"
                     height="54"
                     viewBox="0 0 54 54"
@@ -824,28 +841,35 @@ const Home = () => {
                   </svg>
                 </div>
               </div>
-            ) : (
-              <></>
-            )}
+            ) : null}
           </div>
-          <div className="team-img" onClick={() => setKyleClicked(true)}>
-            <img src={require("../theme/assets/kyle.png")} />
+          <div
+            className="team-img"
+            onClick={() => setKyleClicked(!kyleClicked)}
+          >
+            <img
+              src={require("../theme/assets/kyle.png")}
+              alt="Kyle Carriedo, Misfit Labs"
+            />
             {kyleClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/kylecarriedo/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setKyleClicked(!kyleClicked)}
               >
                 <h3>KYLE CARRIEDO</h3>
                 <p>
                   Technology leader and executive spearheading day-to-day
                   operations.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/kylecarriedo/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"
@@ -867,24 +891,28 @@ const Home = () => {
           <div className="team-img">
             <img
               src={require("../theme/assets/scott.png")}
-              onClick={() => setScottClicked(true)}
+              onClick={() => setScottClicked(!scottClicked)}
+              alt="Scott Johns, Misfit Labs"
             />
             {scottClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/scottwjohns/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setScottClicked(!scottClicked)}
               >
                 <h3>SCOTT JOHNS</h3>
                 <p>
                   Product visionary spearheading the portfolio’s design and
                   UI/UX.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/scottwjohns/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"
@@ -906,24 +934,28 @@ const Home = () => {
           <div className="team-img">
             <img
               src={require("../theme/assets/ant.png")}
-              onClick={() => setAntClicked(true)}
+              onClick={() => setAntClicked(!antClicked)}
+              alt="Anthony Alviz, Misfit Labs"
             />
             {antClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/anthony-alviz-a4048362/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setAntClicked(!antClicked)}
               >
                 <h3>ANTHONY ALVIZ</h3>
                 <p>
                   Full–stack engineer managing the portfolio’s technology teams
                   and software development.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/anthony-alviz-a4048362/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"
@@ -945,24 +977,28 @@ const Home = () => {
           <div className="team-img">
             <img
               src={require("../theme/assets/ken.png")}
-              onClick={() => setKenClicked(true)}
+              alt="Ken Cheung, Misfit Labs"
+              onClick={() => setKenClicked(!kenClicked)}
             />
             {kenClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/kencheung/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setKenClicked(!kenClicked)}
               >
                 <h3>KEN CHEUNG</h3>
                 <p>
                   Non-executive partner. Investor, Tencent, BBC, Time Warner,
                   Facebook, Instagram.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/kencheung/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"
@@ -984,21 +1020,28 @@ const Home = () => {
           <div className="team-img">
             <img
               src={require("../theme/assets/ben.png")}
-              onClick={() => setBenClicked(true)}
+              alt="Ben Sharpe, Misfit Labs"
+              onClick={() => setBenClicked(!benClicked)}
             />
             {benClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open("https://www.linkedin.com/in/bsharpe/", "_blank")
-                }
+                onClick={() => setBenClicked(!benClicked)}
               >
                 <h3>BEN SHARPE</h3>
                 <p>
                   Head technology architect. Microsoft and Apple Fellow with
                   over 5 technology patents.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/bsharpe/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"
@@ -1020,24 +1063,28 @@ const Home = () => {
           <div className="team-img">
             <img
               src={require("../theme/assets/mark.png")}
-              onClick={() => setMarkClicked(true)}
+              alt="Mark Osenga, Misfit Labs"
+              onClick={() => setMarkClicked(!markClicked)}
             />
             {markClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/markosenga/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setMarkClicked(!markClicked)}
               >
                 <h3>MARK OSENGA</h3>
                 <p>
                   Executive managing portfolio operations, training and
                   back-office administration.
                 </p>
-                <div className="svg-wrapper">
+                <div
+                  className="svg-wrapper"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/markosenga/",
+                      "_blank"
+                    )
+                  }
+                >
                   <svg
                     width="54"
                     height="54"

@@ -6,6 +6,7 @@
 
   section {
     padding-top: 140px;
+    scroll-margin-top: 105px;
   }
 }
 
@@ -40,7 +41,13 @@
   }
 }
 
-
+@media only screen and (max-width: 1440px) {
+  .home {
+    & section {
+      scroll-margin-top: 100px;
+    }
+  }
+}
 @media only screen and (max-width: 1300px) {
   .header {
     font-size: 70px;
@@ -56,7 +63,7 @@
 @media only screen and (max-width: 960px) {
   .home {
     & section {
-      padding-top: 120px;
+      padding-top: 90px;
     }
     .header {
       font-size: 60px;
