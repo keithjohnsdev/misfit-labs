@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Container from "./Shared/Container";
 // import { useInView } from "react-intersection-observer";
 import {
@@ -24,12 +24,15 @@ const Home = () => {
   const [kenClicked, setKenClicked] = useState(false);
   const [benClicked, setBenClicked] = useState(false);
   const [markClicked, setMarkClicked] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
-  // const { ref, inView } = useInView({
-  //   /* Optional options */
-  //   threshold: 0.5,
-  //   triggerOnce: true,
-  // });
+  useEffect(() => {
+    if (window.innerWidth > 1440) {
+      setMobile(false);
+    } else if (window.innerWidth < 1440) {
+      setMobile(true);
+    }
+  });
 
   function hamburgerToggle() {
     setShowMenu(!showMenu);
@@ -183,12 +186,12 @@ const Home = () => {
         <Container>
           <FadeInOnView>
             <h1 className="header">
-              Here’s to the Misfits,{` `}
+              Here’s to the Misfits,
               <br className="break" />
               the troublemakers…
             </h1>
           </FadeInOnView>
-          <FadeSlideUpOnView delay="1s">
+          <FadeSlideUpOnView fadeDelay="0.6s" slideDelay="0.6s">
             <p className="hero-desc">
               <span className="first-line">
                 Misfit Labs is a technology venture studio H.Q. in Miami, FL.
@@ -202,7 +205,7 @@ const Home = () => {
       </section>
       <section className="platform" ref={platform}>
         <Container>
-          <FadeSlideRightOnView delay="1.8s">
+          <FadeSlideRightOnView fadeDelay="1s" slideDelay="1s">
             <p className="section-title slide-in">OUR PLATFORM</p>
           </FadeSlideRightOnView>
           <div className="platform-boxes">
@@ -227,7 +230,10 @@ const Home = () => {
                 </p>
               </div>
             </FadeSlideUpOnView>
-            <FadeSlideUpOnView delay="0.6s">
+            <FadeSlideUpOnView
+              fadeDelay={mobile ? "" : `0.4s`}
+              slideDelay={mobile ? "" : `0.4s`}
+            >
               <div className="platform-box">
                 <div className="logo-wrapper">
                   <img src={require("../theme/assets/corporations.png")} />
@@ -250,7 +256,10 @@ const Home = () => {
                 </p>
               </div>
             </FadeSlideUpOnView>
-            <FadeSlideUpOnView delay="1s">
+            <FadeSlideUpOnView
+              fadeDelay={mobile ? "" : `0.6s`}
+              slideDelay={mobile ? "" : `0.6s`}
+            >
               <div className="platform-box last">
                 <div className="logo-wrapper">
                   <img src={require("../theme/assets/investors.png")} />
@@ -311,7 +320,7 @@ const Home = () => {
                   <h3>Investing</h3>
                   <p>
                     Providing venture capital investment through resource
-                    contribution and <br /> capital allocation.
+                    contribution and capital allocation.
                   </p>
                 </FadeSlideRightOnView>
               </div>{" "}
@@ -554,8 +563,8 @@ const Home = () => {
             >
               <h3>JOEY GUTIERREZ</h3>
               <p>
-                Entrepreneur, corporate development executive leading day-to-day
-                operations.
+                Entrepreneur and corporate development executive leading
+                day-to-day operations.
               </p>
               <div className="svg-wrapper">
                 <svg
@@ -588,8 +597,8 @@ const Home = () => {
             >
               <h3>KYLE CARRIEDO</h3>
               <p>
-                Technology leader, senior R&D at Apple (iTunes, Apple Watch,
-                Apple TV, iTunesU)
+                Technology leader and executive spearheading day-to-day
+                operations.
               </p>
               <div className="svg-wrapper">
                 <svg
@@ -622,8 +631,7 @@ const Home = () => {
             >
               <h3>SCOTT JOHNS</h3>
               <p>
-                Viking warrior and UI/UX designer that has worked with with
-                dozens of startups.
+                Product visionary spearheading the portfolio’s design and UI/UX.
               </p>
               <div className="svg-wrapper">
                 <svg
@@ -656,8 +664,8 @@ const Home = () => {
             >
               <h3>ANTHONY ALVIZ</h3>
               <p>
-                Lead front-end engineer, manager and black belt jiu jitsu
-                champion.
+                Full–stack engineer managing the portfolio’s technology teams
+                and software development.
               </p>
               <div className="svg-wrapper">
                 <svg
@@ -687,7 +695,7 @@ const Home = () => {
             >
               <h3>KEN CHEUNG</h3>
               <p>
-                Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
+                Non-executive partner. Investor, Tencent, BBC, Time Warner,
                 Facebook, Instagram.
               </p>
               <div className="svg-wrapper">
@@ -718,8 +726,8 @@ const Home = () => {
             >
               <h3>BEN SHARPE</h3>
               <p>
-                Head wizard, Apple & Microsoft Fellow with over 5 technology
-                patents.
+                Head technology architect. Microsoft and Apple Fellow with over
+                5 technology patents.
               </p>
               <div className="svg-wrapper">
                 <svg
@@ -786,20 +794,21 @@ const Home = () => {
             {joeyClicked && (
               <div
                 className="team-img-hover"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
-                    "_blank"
-                  )
-                }
+                onClick={() => setJoeyClicked(false)}
               >
                 <h3>JOEY GUTIERREZ</h3>
                 <p>
-                  Entrepreneur, corporate development executive leading
+                  Entrepreneur and corporate development executive leading
                   day-to-day operations.
                 </p>
                 <div className="svg-wrapper">
                   <svg
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/joey-gutierrez-7b281225/",
+                        "_blank"
+                      )
+                    }
                     width="54"
                     height="54"
                     viewBox="0 0 54 54"
@@ -831,8 +840,8 @@ const Home = () => {
               >
                 <h3>KYLE CARRIEDO</h3>
                 <p>
-                  Technology leader, senior R&D at Apple (iTunes, Apple Watch,
-                  Apple TV, iTunesU)
+                  Technology leader and executive spearheading day-to-day
+                  operations.
                 </p>
                 <div className="svg-wrapper">
                   <svg
@@ -870,8 +879,8 @@ const Home = () => {
               >
                 <h3>SCOTT JOHNS</h3>
                 <p>
-                  Viking warrior and UI/UX designer that has worked with with
-                  dozens of startups.
+                  Product visionary spearheading the portfolio’s design and
+                  UI/UX.
                 </p>
                 <div className="svg-wrapper">
                   <svg
@@ -909,8 +918,8 @@ const Home = () => {
               >
                 <h3>ANTHONY ALVIZ</h3>
                 <p>
-                  Lead front-end engineer, manager and black belt jiu jitsu
-                  champion.
+                  Full–stack engineer managing the portfolio’s technology teams
+                  and software development.
                 </p>
                 <div className="svg-wrapper">
                   <svg
@@ -948,7 +957,7 @@ const Home = () => {
               >
                 <h3>KEN CHEUNG</h3>
                 <p>
-                  Non-Executive Partner. Investor, Tencent, BBC, Time Warner,
+                  Non-executive partner. Investor, Tencent, BBC, Time Warner,
                   Facebook, Instagram.
                 </p>
                 <div className="svg-wrapper">
@@ -984,8 +993,8 @@ const Home = () => {
               >
                 <h3>BEN SHARPE</h3>
                 <p>
-                  Head wizard, Apple & Microsoft Fellow with over 5 technology
-                  patents.
+                  Head technology architect. Microsoft and Apple Fellow with
+                  over 5 technology patents.
                 </p>
                 <div className="svg-wrapper">
                   <svg

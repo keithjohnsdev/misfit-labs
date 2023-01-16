@@ -147,6 +147,15 @@
     }
     &.mobile {
       display: flex;
+
+      & .team-img {
+        & .team-img-hover{
+          & .svg-wrapper {
+            padding: 2%;
+            margin: auto 25% 0px;
+          }
+        }
+      }
     }
   }
 }
