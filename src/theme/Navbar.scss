@@ -64,7 +64,7 @@
 
 .mobile-menu.hide {
   right: -260px;
-  // opacity: 0;
+  opacity: 0;
   transform: translateX(0%);
 }
 
@@ -74,6 +74,7 @@
     padding-left: 40px;
     &.hide {
       display: block;
+      right: -300px;
     }
   }
   .hamburger {
@@ -154,7 +155,7 @@
       padding-right: 20px;
       padding-left: 0;
       & p {
-        font-size: 12px;
+        font-size: 14px;
       }
 
       &.hide {

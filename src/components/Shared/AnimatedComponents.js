@@ -38,7 +38,7 @@ export const FadeSlideRightOnView = (props) => {
         className={props.class}
         style={{
           ...props.style,
-          transform: fadeRefInView ? "translateX(0px) " : "translateX(-40px)",
+          transform: fadeRefInView ? `translateX(${props.xEnd || "0px"})` : `translateX(${props.xStart || "-40px"})`,
           transition: `transform ${props.slideDuration || "0.8s"} ease ${
             props.slideDelay || "0.2s"
           }`,

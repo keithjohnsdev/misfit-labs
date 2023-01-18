@@ -317,11 +317,11 @@ const Home = () => {
               </div>
             </div>
             <div className="serpentine-row">
-              <FadeSlideLeftOnView>
-                <div className="img-div mobile">
+              <div className="img-div mobile">
+                <FadeSlideLeftOnView>
                   <img src={require("../theme/assets/investing.png")} />
-                </div>{" "}
-              </FadeSlideLeftOnView>
+                </FadeSlideLeftOnView>
+              </div>
               <div className="text">
                 <FadeSlideRightOnView>
                   <h3>Investing</h3>
@@ -330,11 +330,11 @@ const Home = () => {
                     contribution and capital allocation.
                   </p>
                 </FadeSlideRightOnView>
-              </div>{" "}
+              </div>
               <FadeSlideLeftOnView>
                 <div className="img-div right">
                   <img src={require("../theme/assets/investing.png")} />
-                </div>{" "}
+                </div>
               </FadeSlideLeftOnView>
             </div>
             <div className="serpentine-row">
@@ -354,11 +354,11 @@ const Home = () => {
               </div>
             </div>
             <div className="serpentine-row last">
-              <FadeSlideLeftOnView>
-                <div className="img-div mobile">
+              <div className="img-div mobile">
+                <FadeSlideLeftOnView>
                   <img src={require("../theme/assets/scaling.png")} />
-                </div>
-              </FadeSlideLeftOnView>
+                </FadeSlideLeftOnView>
+              </div>
               <div className="text">
                 <FadeSlideRightOnView>
                   <h3>Scaling</h3>
@@ -368,11 +368,11 @@ const Home = () => {
                   </p>
                 </FadeSlideRightOnView>
               </div>
-              <FadeSlideLeftOnView>
-                <div className="img-div right">
+              <div className="img-div right">
+                <FadeSlideLeftOnView>
                   <img src={require("../theme/assets/scaling.png")} />
-                </div>
-              </FadeSlideLeftOnView>
+                </FadeSlideLeftOnView>
+              </div>
             </div>
           </div>
         </Container>

@@ -149,7 +149,7 @@
       display: flex;
 
       & .team-img {
-        & .team-img-hover{
+        & .team-img-hover {
           & .svg-wrapper {
             padding: 2%;
             margin: auto 25% 0px;
@@ -175,20 +175,23 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .team-grid .team-img {
-    width: 50%;
-    & .team-img-hover {
-      padding: 19.7% 8.8% 10%;
-      & h3 {
-        font-size: 20px;
-        line-height: 26px;
-      }
-      & p {
-        font-size: 18px;
-        line-height: 23px;
-      }
-      & svg {
-        width: 45px;
+  .team-grid {
+    margin-top: 90px;
+    & .team-img {
+      width: 50%;
+      & .team-img-hover {
+        padding: 19.7% 8.8% 10%;
+        & h3 {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        & p {
+          font-size: 18px;
+          line-height: 23px;
+        }
+        & svg {
+          width: 45px;
+        }
       }
     }
   }
